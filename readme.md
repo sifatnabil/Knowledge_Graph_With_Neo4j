@@ -13,9 +13,17 @@ username: neo4j
 password: kgDemo
 ```
 
-Save these credentials in a `.py` file and name that file `config.py`. These credentials can be changed from the docker-compose.yml file. Now to install the necessary packages run the command: `pip install -r requirements.txt`. It's better to use virtual environment to install the packages.
+Save these credentials in a `.py` file and name that file `config.py`. These credentials can be changed from the `docker-compose.yml` file. The `config.py` file should look like this:
 
-Spacy model is needed to tokenize texts. To download the model, run the command: 
+```python
+neo4j_url = "bolt://localhost:7687"
+neo4j_username = "neo4j"
+neo4j_password = "kgDemo"
+```
+
+Now to install the necessary packages run the command: `pip install -r requirements.txt`. It's better to use virtual environment to install the packages.
+
+Spacy model is needed to tokenize texts. To download the model, run the command:
 
 ```python
 python3 -m spacy download en_core_web_md
